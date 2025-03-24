@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I wanted</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Lobster&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .img-container {
+        display: grid;
+        place-content: center;
+        /* justify-content: center;  */
+        /* align-items: center; */
+      }
+      .img-container > h1 {
+        font-family: Lobster;
+        text-align: center;
+      }
+      .responsive-image {
+        border-radius: 50%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        width: 200px;
+      }
+
+      .form-box {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        background-color: #6795c785;
+      }
+      .form-container {
+        background: white;
+        padding: 50px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+      .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        transition: all 0.3s;
+      }
+      .form-group input:hover,
+      .form-group textarea:hover {
+        border-color: #007bff;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: #0056b3;
+        box-shadow: 0px 0px 5px rgba(0, 91, 187, 0.5);
+        outline: none;
+      }
+      .btn {
+        width: 100%;
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .btn:hover {
+        background: #0056b3;
+      }
+      /* .email-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0a59ec;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+
+      .email-link:hover {
+        background-color: #0621bdc4;
+      }
+      .send-email {
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      } */
+      .send-email {
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .email-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0a59ec;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        position: relative;
+        transition: background-color 0.3s, transform 0.2s;
+        animation: pulse 0.3s infinite alternate ease-in-out;
+      }
+
+      .email-link:hover {
+        background-color: #0621bdc4;
+        transform: scale(1.1);
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 5px rgba(89, 8, 240, 0.945);
+        }
+        100% {
+          transform: scale(1.005);
+          box-shadow: 0 0 15px rgba(61, 9, 5, 0.8);
+        }
+      }
+
+      /* #popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      } */
+
+      /* #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+      #popupCard {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        width: 300px;
+        z-index: 1000;
+      }
+      #popupCard h2 {
+        margin-top: 0;
+        color: #333;
+      }
+      #okBtn {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      #okBtn:hover {
+        background: #0056b3;
+      } */
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+      #popupCard {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        width: 300px;
+        z-index: 1000;
+      }
+      #popupCard h2 {
+        margin-top: 0;
+        color: #333;
+      }
+      #okBtn {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      #okBtn:hover {
+        background: #0056b3;
+      }
+      @media screen and (max-width: 480px) {
+        .form-box {
+          background-color: white;
+        }
+        .form-container {
+          background: white;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img-container">
+      <img
+        src="./WhatsApp Image 2025-03-18 at 07.49.36.jpeg"
+        alt="eye"
+        class="responsive-image"
+      />
+      <h1>I wanted</h1>
+    </div>
+    <div class="form-box">
+      <div class="form-container">
+        <h2>What you want???</h2>
+        <form name="submit-to-google-sheet">
+          <div class="form-group">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              required
+              name="email"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="What you want"
+              required
+              name="want"
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              placeholder="Description"
+              rows="5"
+              required
+              style="resize: none"
+              name="description"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <input type="hidden" id="date" name="date" value="" />
+          </div>
+          <button type="submit" class="btn" name="submit" id="myButton">
+            Submit</button
+          ><br />
+          <!-- <div id="overlay" onclick="showPopup()"></div>
+          <div id="overlay" onclick="hidePopup()"></div>
+          <div id="popupCard">
+            <h2>Thank you for submitting</h2>
+            <p>If you have any questions, feel free to email us.</p>
+            <button onclick="hidePopup()" id="okBtn">OK</button>
+          </div> -->
+          <span id="success"></span>
+          <!-- *********************************************** -->
+          <!-- <button onclick="showPopup()">Show Popup</button> -->
+
+          <div id="overlay" onclick="hidePopup()"></div>
+
+          <div id="popupCard">
+            <h2>Thank you for submitting!!!</h2>
+            <p>If you have any questions, feel free to email us.</p>
+            <button id="okBtn" onclick="hidePopup()">OK</button>
+          </div>
+          <!-- ************************************************ -->
+        </form>
+      </div>
+    </div>
+    <div class="send-email">
+      <!-- <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=eyewanted00@gmail.com&su=Hello&body=Hi%20this%20is"
+        target="_blank"
+        class="email-link"
+      >
+        Send Email
+      </a> -->
+      <a
+        href="mailto:eyewanted00@gmail.com?subject=Inquiry&body=Hello,%20I%20would%20like%20to%20ask..."
+        class="email-link"
+        >Send Email</a
+      >
+    </div>
+    <script>
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+      const day = String(now.getDate()).padStart(2, "0");
+      const hours = String(now.getHours()).padStart(2, "0");
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      const seconds = String(now.getSeconds()).padStart(2, "0");
+
+      const customFormattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+      console.log(customFormattedDate); // Outputs in YYYY-MM-DD HH:MM:SS format
+      document.getElementById("date").value = customFormattedDate;
+    </script>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbz3Kg326nmacusysZ-bQDaZVhT1KlynBcWWgnwpv2DWI1zjm4k1hEVJhHIleDa79ujT/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const success = document.getElementById("success");
+      // function showPopup() {
+      //   document.getElementById("popup").style.display = "block";
+      //   document.getElementById("overlay").style.display = "block";
+      // }
+
+      // function hidePopup() {
+      //   document.getElementById("popup").style.display = "none";
+      //   document.getElementById("overlay").style.display = "none";
+      // }
+      // **********************************************
+
+      function showPopup() {
+        document.getElementById("popupCard").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+      }
+
+      function hidePopup() {
+        document.getElementById("popupCard").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+      }
+
+      // ***********************************************************
+
+      form.addEventListener("submit", (e) => {
+        document.getElementById("myButton").disabled = true;
+        e.preventDefault();
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            showPopup();
+            success.innerHTML = "Thank you for submitting...";
+            setTimeout(function () {
+              success.innerHTML = "";
+            }, 2000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
